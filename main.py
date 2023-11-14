@@ -1,5 +1,5 @@
-import inputs
-import tables
+import amortizacion.inputs as inputs
+import amortizacion.tables as tables
 
 def run():
     print(inputs.credit)
