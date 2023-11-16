@@ -1,31 +1,47 @@
 # Inputs
-credito = float(input("Cuál es el monto del credito: "))
-tipo_de_periodo = input('¿Qué tipo de periodos tiene el credito? (mensual, trimestral, semestral, anual): ')
-periodos = float(input('¿Cuántos periodos tiene?: '))
-tasa = float(input('¿De cuánto es la tasa de interés? (sin el signo de porcentage): '))/100
-periodo_tasa = input('¿Qué tipo de periodos tiene la tasa? (mensual, trimestral, semestral, anual): ')
-spread = float(input('¿De cuánto es el spread?: '))/100
-cuota = float(input('¿De cuánto es la cuota?: '))
+presente = ()
+futuro = ()
+tipo_de_periodo = ()
+periodos = ()
+tasa = ()
+periodo_tasa = ()
+spread = ()
+cuota = ()
 saldo_ant = ()
 amortizacion = ()
 
 
-# Tasas
-def interes(tipo_de_periodo, periodos, tasa, periodo_tasa, spread):
-    
+def escenario():
+    print('Los modelos financiero disponibles son:')
+    print('1. Valor futuro')
+    print('2. Valor presete')
+    matfin = input('Cual es el modelo de matematica financiero que quieres que calcule: ') 
+    if matfin == '1. Valor futuro':
+        presente = float(input("¿Cuánto quieres invertir?: "))
+        periodos = float(input('¿Por cuanto tiempo quieres dejar la inversión?: '))
+        valores = periodos.split()
+        if len(valores) == 2:
+            n = valores[0]
+            periodicidad = valores[1]
+        tasa = float(input('¿De cuánto es la tasa de interés? (sin el signo de porcentage): '))/100
+        periodo_tasa = input('¿Qué tipo de periodos tiene la tasa? (mensual, trimestral, semestral, anual): ')
+        valor = presente*((1+tasa)**n)
+        analisis = f'El valor futuro de tu inversión de {presente} por {peridos} '
+    elif matfin == '2. Valor presete':
+        futuro = float(input("¿Cuánto quieres tener acumulado en tu inversión?: "))
+        periodos = float(input('¿Por cuanto tiempo quieres dejar la inversión?: '))
+        tasa = float(input('¿De cuánto es la tasa de interés? (sin el signo de porcentage): '))/100
+        periodo_tasa = input('¿Qué tipo de periodos tiene la tasa? (mensual, trimestral, semestral, anual): ')
+        valor = futuro/((1+tasa)**periodos)
+    else:
+        valor = 'Prueba otra vez'
+    return valor
 
 
-# Amortizacion
-def amort(amortizacion):
-    pass
+print(escenario())
 
 
-
-
-# Saldo incial
-
-def sld_ini(credito, amort):
-    pass
+'''
 
 
 # Inversion
@@ -54,7 +70,7 @@ periodo_cuotas = input('¿Que periodicidad tienen las cuotas?: ')
 print(credit)
 print(f'El credito tiene un periodo de gracia de {periodo_gra} {tiempo}')
 print(f'Con cuotas de {cuota} a {periodo_cuotas}')
-
+'''
 
 
 

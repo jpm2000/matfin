@@ -2,13 +2,6 @@ import pandas as pd
 from tabulate import tabulate
 
 
-def amort_table():
-    
-
-
-
-
-
 n = [1, 2, 3, 4, 5]
 saldo_inicial = [2000, 1000, 500, 250, 100]
 interes = [12, 12, 12, 12, 12]
