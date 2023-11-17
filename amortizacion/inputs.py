@@ -1,4 +1,4 @@
-import tables
+
 
 # Inputs
 presente = ()
@@ -29,7 +29,6 @@ def escenario():
             i = float(interes[0])/100
         futuro = presente*((1+i)**n)
         analisis = f'Si inviertes {presente} a {periodos}, con una tasa de {tasa} el valor futuro de tu inversión será: {futuro}'
-        tabla = tables.amort_table()
     elif matfin == '2':
         futuro = float(input("¿Cuánto quieres tener acumulado en tu inversión?: "))
         periodos = input('¿Por cuanto tiempo quieres dejar la inversión?: ')
@@ -44,7 +43,7 @@ def escenario():
         analisis = f'Si quieres tener {futuro} en {periodos}, con una tasa de {tasa}, hoy tienes que invertir: {presente}'
     else:
         analisis = 'Prueba otra vez'
-    return analisis, presente, futuro, n, i
+    return analisis
 
 print("")
 print(escenario())

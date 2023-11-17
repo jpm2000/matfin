@@ -1,19 +1,8 @@
 import pandas as pd
 import numpy as np
 from tabulate import tabulate
+import inputs
 
-'''
-presente = ()
-futuro = ()
-tipo_de_periodo = ()
-periodos = (11)
-tasa = ()
-periodo_tasa = ()
-spread = ()
-cuota = ()
-saldo_ant = ()
-amortizacion = ()
-'''
 
 def amort_table():
     n = np.arange(0, inputs.periodos)
