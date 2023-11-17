@@ -77,9 +77,6 @@ st.link_button('Financial statements','https://docs.google.com/spreadsheets/d/10
 
 st.info('This is a trial version of Bucks financial assistant')
 
-
-
-
 # Prompt template
 data_template = PromptTemplate(
     input_variables= ['data'],
@@ -89,7 +86,7 @@ data_template = PromptTemplate(
 analysis_template = PromptTemplate(
     input_variables= ['analysis'],
     #based on the data from annualreport.pdf provide a financial analysis and key metrics
-    template='provide further financial information {analysis}'
+    template='provide further about how you got the information {analysis}'
 )
 
 # LLM
