@@ -1,8 +1,10 @@
+import tables
+
 # Inputs
 presente = ()
 futuro = ()
 tipo_de_periodo = ()
-periodos = ()
+periodos = (11)
 tasa = ()
 periodo_tasa = ()
 spread = ()
@@ -24,10 +26,10 @@ def escenario():
         tasa = input('¿De cuánto es la tasa de interés? (sin el signo de porcentage): ')
         interes = tasa.split()
         if len(interes) == 2:
-            i = float(interes[0])/100 
-        valor = presente*((1+i)**n)
-        analisis = f'Si inviertes {presente} a {periodos}, con una tasa de {tasa} el valor futuro de tu inversión será: {valor}'
-        # analisis = f'El valor futuro de tu inversión de {presente} por {peridos} '
+            i = float(interes[0])/100
+        futuro = presente*((1+i)**n)
+        analisis = f'Si inviertes {presente} a {periodos}, con una tasa de {tasa} el valor futuro de tu inversión será: {futuro}'
+        tabla = tables.amort_table()
     elif matfin == '2':
         futuro = float(input("¿Cuánto quieres tener acumulado en tu inversión?: "))
         periodos = input('¿Por cuanto tiempo quieres dejar la inversión?: ')
@@ -38,11 +40,11 @@ def escenario():
         interes = tasa.split()
         if len(interes) == 2:
             i = float(interes[0])/100
-        valor = futuro/((1+i)**n)
-        analisis = f'Si quieres tener {futuro} en {periodos}, con una tasa de {tasa}, hoy tienes que invertir: {valor}'
+        presente = futuro/((1+i)**n)
+        analisis = f'Si quieres tener {futuro} en {periodos}, con una tasa de {tasa}, hoy tienes que invertir: {presente}'
     else:
         analisis = 'Prueba otra vez'
-    return analisis
+    return analisis, presente, futuro, n, i
 
 print("")
 print(escenario())

@@ -1,22 +1,39 @@
 import pandas as pd
+import numpy as np
 from tabulate import tabulate
 
+'''
+presente = ()
+futuro = ()
+tipo_de_periodo = ()
+periodos = (11)
+tasa = ()
+periodo_tasa = ()
+spread = ()
+cuota = ()
+saldo_ant = ()
+amortizacion = ()
+'''
 
-n = [1, 2, 3, 4, 5]
-saldo_inicial = [2000, 1000, 500, 250, 100]
-interes = [12, 12, 12, 12, 12]
-cuotas = [300, 300, 300, 300, 300]
-amortizacion = [421, 421, 421, 421, 421]
-saldo_final = [1800, 800, 400, 150, 0]
-
-
-table = {
+def amort_table():
+    n = np.arange(0, inputs.periodos)
+    saldo_inicial = np.arange(0, inputs.periodos)
+    interes = np.arange(0, inputs.periodos)
+    cuotas = np.arange(0, inputs.periodos)
+    amort = np.arange(0, inputs.periodos)
+    saldo_final = np.arange(0, inputs.periodos)
+    table = {
     'Periodo': n,
     'Saldo inicial': saldo_inicial,
     'Intereses': interes,
     'Cuota': cuotas,
-    'Amortizacion': amortizacion,
+    'Amortizacion': amort,
     'Saldo final': saldo_final
-}
+    }
+    return tabulate(table, headers='keys', tablefmt='fancy_grid')
 
-print(tabulate(table, headers="keys", tablefmt="fancy_grid"))
+#print(tabulate(table, headers="keys", tablefmt="fancy_grid"))
+
+print(amort_table())
+print('')
+print(inputs)
