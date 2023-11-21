@@ -86,7 +86,7 @@ data_template = PromptTemplate(
 analysis_template = PromptTemplate(
     input_variables= ['analysis'],
     #based on the data from annualreport.pdf provide a financial analysis and key metrics
-    template='provide further about how you got the information {analysis}'
+    template='provide a financial analysis and metrics {analysis}'
 )
 
 # LLM
