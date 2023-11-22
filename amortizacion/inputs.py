@@ -31,18 +31,6 @@ def escenario():
             i = float(interes[0])/100
         futuro = presente*((1+i)**n)
         analisis = f'Si inviertes {presente} a {periodos}, con una tasa de {tasa} el valor futuro de tu inversión será: {futuro}'
-        period = np.arange(0, n)
-        interest = np.array(i)
-        sald_ini = np.array(presente, n)
-        retiros = np.array(0)
-        sald_fin = np.array(n, futuro)
-        tabla = {
-        'Mes': period,
-        'i': interest,
-        'Deposito': sald_ini,
-        'Retiros': retiros,
-        'Saldo final': sald_fin
-    }
     elif matfin == '2':
         futuro = float(input("¿Cuánto quieres tener acumulado en tu inversión?: "))
         periodos = input('¿Por cuanto tiempo quieres dejar la inversión?: ')
@@ -57,7 +45,7 @@ def escenario():
         analisis = f'Si quieres tener {futuro} en {periodos}, con una tasa de {tasa}, hoy tienes que invertir: {presente}'
     else:
         analisis = 'Prueba otra vez'
-    return analisis, tabulate(tabla, headers='keys', tablefmt='fancy_grid')
+    return analisis
 
 print("")
 print(escenario())
