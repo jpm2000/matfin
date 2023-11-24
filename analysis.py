@@ -22,7 +22,9 @@ from langchain.agents.agent_toolkits import (
 
 
 os.getenv("OPENAI_API_KEY") == os.environ['OPENAI_API_KEY']
-csv = pd.read_csv("/Users/juanmanrique/Documents/matfin/ds_salaries.csv", header=0, sep=',')
+csv = pd.read_csv("/Users/juanmanrique/Documents/matfin/bestsellers with categories copy.csv", header=0, sep=',')
+
+print(csv)
 
 
 agent = create_csv_agent(
