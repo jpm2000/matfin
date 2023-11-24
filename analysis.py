@@ -20,16 +20,16 @@ from langchain.agents.agent_toolkits import (
     VectorStoreInfo
 )
 
+financial_sample = pd.read_csv('/Users/juanmanrique/Documents/matfin/financial_sample.csv', sep=',', header=0)
+print(financial_sample)
+
+amazon_csv = pd.read_csv('/Users/juanmanrique/Documents/matfin/amazon-2.csv', sep=',', header=0)
 
 os.getenv("OPENAI_API_KEY") == os.environ['OPENAI_API_KEY']
-csv = pd.read_csv("/Users/juanmanrique/Documents/matfin/bestsellers with categories copy.csv", header=0, sep=',')
-
-print(csv)
-
 
 agent = create_csv_agent(
     ChatOpenAI(temperature=0, model="gpt-3.5-turbo-0613"),
-    csv,
+    financial_sample,
     verbose=True,
     agent_type=AgentType.OPENAI_FUNCTIONS,
 )
