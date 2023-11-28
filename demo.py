@@ -33,7 +33,7 @@ openai.api_key = os.environ['OPENAI_API_KEY']
 
 
 # Create instance of OpenAI LLM
-llm = OpenAI(temperature=2, verbose=True)
+llm = OpenAI(temperature=0.9, verbose=True)
 embeddings = OpenAIEmbeddings()
 
 # Upload file
