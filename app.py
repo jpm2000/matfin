@@ -14,9 +14,9 @@ def main():
         exit(1)
     else:
         print("OPENAI_API_KEY is set")
-
-    st.set_page_config(page_title="Ask your CSV")
-    st.header("Ask your CSV 📈")
+        
+    st.set_page_config(page_title="Bucks CSV")
+    st.header("Bucks CSV")
 
     csv_file = st.file_uploader("Upload a CSV file", type="csv")
     if csv_file is not None:
